@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Drop Bears</title>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+        <a href="https://dropbears.itsraf.com" class="logo">The Drop Bears</a>
+        <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://dropbears.itsraf.com/about">About Us</a></li>
+            <li><a href="https://dropbears.itsraf.com/join">Join</a></li>
+            <li class="dropdown">
+                <a href="https://dropbears.itsraf.com/robots">Robots <i class="fas fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="https://dropbears.itsraf.com/robots#current">Current Robot</a>
+                    <a href="https://dropbears.itsraf.com/robots#past">Past Robots</a>
+                    <a href="https://dropbears.itsraf.com/robots#awards">Awards</a>
+                </div>
+            </li>
+            <li><a href="https://dropbears.itsraf.com/sponsors">Sponsors</a></li>
+            <li><a href="https://dropbears.itsraf.com/calendar">Calendar</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div class="hero-content">
+            <img src="https://res.cloudinary.com/dws8o7mce/image/upload/v1731898174/drop_bears_logo_qbsgzg.png" alt="The Drop Bears Logo" class="hero-logo">
+            <p class="hero-subtitle">Join a team of high school students dedicated to furthering their STEM skills in the First Robotics Competition.</p>
+        </div>
+        <i class="fas fa-arrow-down scroll-arrow"></i>
+    </div>
+
+    <div class="content">
+        <h1 class="section-title">What We Do</h1>
+        <div class="info-grid">
+            <div class="info-card">
+                <h2>Design</h2>
+                <hr>
+                <p>Design a robot and all included modules using online parametric 3D modelling platform Onshape</p>
+            </div>
+            
+            <div class="info-card">
+                <h2>Program</h2>
+                <hr>
+                <p>Write code in Python allow the robot to complete all necessary tasks, including autonomous operation</p>
+            </div>
+            
+            <div class="info-card">
+                <h2>Build</h2>
+                <hr>
+                <p>Use engineering skills to construct and fabricate a robot that meets functional requirements</p>
+            </div>
+            
+            <div class="info-card">
+                <h2>Schedule</h2>
+                <hr>
+                <p>Design and manufacture a robot within a 6 to 8 weeks time frame</p>
+            </div>
+            
+            <div class="info-card">
+                <h2>Competition</h2>
+                <hr>
+                <p>Compete against over 3000 teams worldwide in both regional and international locations</p>
+            </div>
+            
+            <div class="info-card">
+                <h2>Outreach</h2>
+                <hr>
+                <p>Engage and recruit high school students from across the Sydney region and manage team social media and sponsorship</p>
+            </div>
+        </div>
+
+        <section class="season-highlights">
+            <h1 class="section-title">2023 Season Highlights</h1>
+            <div class="highlights-content">
+                <p>The 2023 season began on January 8th with our annual game review meeting, which launched an eight-week intensive process. Our team engaged in planning, design, prototyping, building, and programming activities leading up to the development of an outstanding robot.</p>
+                
+                <p>Our team presented its work during the Australian Southern Cross Regional competition held at the WIN Entertainment Centre in Wollongong. The competition took place on Friday to Sunday, the 10th to 12th of March, where practice sessions were held on Friday and opening ceremonies plus qualifying matches on Saturday, while on Sunday, it was qualifying rounds, playoffs, closing ceremony, and awards. With our alliance Koalified (6996) and Embers (7583), we placed a great third overall.</p>
+                
+                <p>This trend of success continued in the competition of Dual Down Under, where we, alliances with teams of Barker Redbacks-4613 and ARTEMIS-5876 won the event.</p>
+            </div>
+
+            <h2 class="section-subtitle">Leadership Team</h2>
+            <div class="leadership-content">
+                <p>Our mentors bring a wealth of experience and passion to help the next generation of robotics enthusiasts. Ian Thomas is our current Head Mentor, who has been with the Drop Bears since their inception and has served nearly a decade; he brings professional robotics experience back into the team. Andreas Heintze continues his committed leadership after seven years with the team, helping guide our future at The University of Sydney.</p>
+                
+                <p>Dr. James Ward of the Australian Centre for Robotics at the University of Sydney has been an integral part of hosting The Drop Bears over the past seven years. His enthusiasm in helping students find and utilize their passion in the areas of STEM outside the typical schooling has been invaluable to our program's success.</p>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const nav = document.querySelector('nav');
+            const arrow = document.querySelector('.scroll-arrow');
+            
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+                arrow.classList.add('hidden');
+            } else {
+                nav.classList.remove('scrolled');
+                arrow.classList.remove('hidden');
+            }
+        });
+
+        document.querySelector('.scroll-arrow').addEventListener('click', function() {
+            document.querySelector('.content').scrollIntoView({ behavior: 'smooth' });
+        });
+
+        // Add hamburger menu functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+
+        // Close menu when clicking a link
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
