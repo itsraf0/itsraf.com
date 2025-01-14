@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +33,7 @@
 
     <script>
         let distance = 10000;
+        let alertShown = false;
 
         function updateDistance() {
             if (distance > 0) {
@@ -41,9 +41,10 @@
                 if (distance < 0) distance = 0;
                 document.getElementById('distance-text').innerHTML = `Wawa is ${distance}km away from your current location`;
             }
-
-            if (distance === 0) {
-                alert('Im here, dont click ok.')
+        
+            if (distance === 0 && !alertShown) {
+                alertShown = true;
+                alert('I\'m here, don\'t click ok.');
                 window.location.href = 'https://whereiswawa.jbzis.tech/funnyvideo.mp4';
             }
         }
