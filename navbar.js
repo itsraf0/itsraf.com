@@ -6,10 +6,10 @@ document.addEventListener("DOMContentLoaded", function() {
     navbar.appendChild(brand);
     
     const navItems = [
-        { name: "Placeholder", link: "#photography" },
-        { name: "Placeholder", link: "#web-coding" },
-        { name: "Placeholder", link: "#robotics" },
-        { name: "Placeholder", link: "#contact" }
+        { name: "Placeholder", link: "#placeholder1" },
+        { name: "Placeholder", link: "#placeholder1" },
+        { name: "Placeholder", link: "#placeholder1" },
+        { name: "Placeholder", link: "#placeholder1" }
     ];
 
     navItems.forEach(item => {
